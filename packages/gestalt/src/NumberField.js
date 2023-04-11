@@ -12,7 +12,7 @@ const parseHandlerValue =
   (handler?: Handler) =>
   ({ event, value }) => {
     const parsedValue = parseFloat(value);
-    handler?.({ event, value: Number.isFinite(parsedValue) ? parsedValue : undefined });
+    handler?.({ event, value: Number.isFinite(parsedValue) ? value : undefined });
   };
 
 type Props = {|
