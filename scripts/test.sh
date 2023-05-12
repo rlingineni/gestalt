@@ -46,5 +46,24 @@ then
   exit 1
 fi
 
+YARN_LOCK_CHANGES=$(git diff master...HEAD --name-only -- 'yarn.lock')
+if [[ "$YARN_LOCK_CHANGES" ]]
+then
+  echo "👀 yarn.lock has changes. If you didn't mean to, revert your changes"
+fi
+
+PACKAGE_JSON_CHANGES=$(git diff master...HEAD --name-only -- 'package.json')
+if [[ "$PACKAGE_JSON_CHANGES" ]]
+then
+  echo "👀 package.json has changes. If you didn't mean to, revert your changes"
+fi
+
+DIST_GESTALT_CHANGES=$(git diff master...HEAD --name-only -- 'packages/gestalt/dist')
+if [[ "$DIST_GESTALT_CHANGES" ]]
+then
+  echo "👀 packages/gestalt/dist has changes. If you didn't mean to, revert your changes"
+fi
+
+
 echo "👌 Looks good to me!"
 echo "📑 Done!"
