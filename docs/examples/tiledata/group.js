@@ -6,7 +6,7 @@ export default function Example(): Node {
   const dataSources = [
     {
       id: 'data-1',
-      name: 'MAU',
+      name: 'Monthly Active Users super long',
       value: '100M',
       color: '01',
       tooltip: 'Monthly active users',

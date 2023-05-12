@@ -1,5 +1,6 @@
 // @flow strict
 import { type Node } from 'react';
+import Box from './Box.js';
 import { type Indexable } from './zIndex.js';
 import { useColorScheme } from './contexts/ColorSchemeProvider.js';
 import InternalDatapoint from './Datapoint/InternalDatapoint.js';
@@ -142,11 +143,12 @@ export default function TileData({
       onChange={onChange}
     >
       <InternalDatapoint
+        disabled={disabled}
+        maxTitleWidth={128}
         title={title}
-        value={value}
         trend={trend}
         trendSentiment={trendSentiment}
-        disabled={disabled}
+        value={value}
       />
     </Tile>
   );

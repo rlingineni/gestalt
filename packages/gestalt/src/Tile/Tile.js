@@ -154,8 +154,27 @@ export default function Tile({
 
   const colorStyles = generateSelectedColorStyles();
 
+  function PositionRelativeCheckbox() {
+    return (
+      <div className={classnames(styles.tile, styles.overlay)}>
+        <Flex width="100%" justifyContent="end">
+          {showCheckbox && (isSelected || isHovered) && (
+            <InternalCheckbox
+              id={id}
+              checked={isSelected}
+              readOnly
+              size="sm"
+              style={{ backgroundColor: colorStyles.borderColor, borderColor: 'transparent' }}
+            />
+          )}
+        </Flex>
+      </div>
+    );
+  }
+
   return (
     <Box position="relative">
+      <PositionRelativeCheckbox />
       <ShouldUseTooltip tooltip={tooltip}>
         <TapArea
           role="button"
@@ -169,18 +188,7 @@ export default function Tile({
           onKeyDown={handleKeyDown}
         >
           <div className={classes} style={colorStyles}>
-            <Flex direction="row" gap={2}>
-              {children}
-              {showCheckbox && (isSelected || isHovered) && (
-                <InternalCheckbox
-                  id={id}
-                  checked={isSelected}
-                  readOnly
-                  size="sm"
-                  style={{ backgroundColor: colorStyles.borderColor, borderColor: 'transparent' }}
-                />
-              )}
-            </Flex>
+            <Flex direction="row">{children}</Flex>
           </div>
         </TapArea>
       </ShouldUseTooltip>

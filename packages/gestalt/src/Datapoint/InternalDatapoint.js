@@ -52,6 +52,10 @@ type Props = {|
    */
   disabled?: boolean,
   /**
+   * max width for the title
+   */
+  maxTitleWidth?: number | string,
+  /**
    * Used to set the size of the datapoint. See the [size](https://gestalt.pinterest.systems#Size) variant to learn more.
    */
   size?: 'md' | 'lg',
@@ -75,6 +79,7 @@ type Props = {|
 export default function InternalDatapoint({
   badge,
   disabled = false,
+  maxTitleWidth,
   size = 'md',
   title,
   tooltipText,
@@ -86,7 +91,7 @@ export default function InternalDatapoint({
   const textColor = disabled ? 'subtle' : 'default';
   return (
     <Flex gap={{ column: 1, row: 0 }} direction="column">
-      <Flex gap={{ row: 1, column: 0 }} alignItems="center" minHeight={24}>
+      <Flex gap={{ row: 1, column: 0 }} alignItems="center" minHeight={24} maxWidth={maxTitleWidth}>
         <Text size="200" color={textColor}>
           {title}
         </Text>
