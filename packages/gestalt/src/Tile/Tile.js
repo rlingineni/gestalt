@@ -1,5 +1,5 @@
 // @flow strict
-import { type Node, useEffect, useState } from 'react';
+import { type Node } from 'react';
 import classnames from 'classnames';
 import Box from '../Box.js';
 import InternalCheckbox from '../Checkbox/InternalCheckbox.js';
@@ -19,6 +19,14 @@ type TooltipProps = {|
   zIndex?: Indexable,
 |};
 
+type ColorStyles = {| borderColor?: string, backgroundColor?: string |};
+
+type InteractionStates = {|
+  disabled: boolean,
+  hovered: boolean,
+  selected: boolean,
+|};
+
 type TileChangeHandler = ({|
   event:
     | SyntheticMouseEvent<HTMLDivElement>
@@ -31,10 +39,6 @@ type TileChangeHandler = ({|
 
 type Props = {|
   /**
-   * The content to be wrapped by tile.
-   */
-  children?: Node,
-  /**
    * The background color of the tile as a hex. Don't forget about tokenization.
    */
   bgColor?: string,
@@ -43,28 +47,14 @@ type Props = {|
    */
   borderColor?: string,
   /**
-   * Indicates if TileData should be disabled. Disabled TileData is inactive and cannot be interacted with.
+   * The content to be wrapped by tile.
    */
+  children?: Node,
   disabled?: boolean,
-  /**
-   * Id to identify the tile.
-   */
   id?: string,
-  /**
-   * Indicate if tile is in a selected state.
-   */
   selected?: boolean,
-  /**
-   * Handler if the item selection state is changed.
-   */
-  onTap?: TileChangeHandler,
-  /**
-   * Shows a visible checkbox when the tile is selected state. See when using in a [group](http://gestalt.pinterest.systems/web/tiledata#Group).
-   */
   showCheckbox?: boolean,
-  /**
-   * Adds a Tooltip on hover/focus of the Tile. See the With Tooltip variant to learn more.
-   */
+  onTap?: TileChangeHandler,
   tooltip?: TooltipProps,
 |};
 
@@ -91,6 +81,42 @@ function MaybeTooltip({
   );
 }
 
+function getCheckboxColors(state: InteractionStates, colorStyles: ColorStyles) {
+  const defaultBackgroundColor = 'transparent';
+  const defaultBorderColor = 'transparent';
+
+  if (state.disabled) {
+    return {
+      backgroundColor: `var(--color-gray-roboflow-300)`,
+      borderColor: defaultBorderColor,
+    };
+  }
+
+  if (state.hovered && !state.selected) {
+    return {
+      backgroundColor: `var(--g-colorGray0)`,
+      borderColor: 'var(--color-border-default)',
+    };
+  }
+
+  if (state.selected) {
+    return {
+      backgroundColor: colorStyles.borderColor,
+      borderColor: defaultBorderColor,
+    };
+  }
+
+  return { backgroundColor: defaultBackgroundColor, borderColor: defaultBorderColor };
+}
+
+function getTileColors(state: InteractionStates, colorStyles: ColorStyles) {
+  // only show colors in a selected state
+  if (state.selected && !state.disabled) {
+    return colorStyles;
+  }
+  return {};
+}
+
 /**
  * Used Internally to wrap a component with a Tile View
  */
@@ -108,22 +134,16 @@ export default function Tile({
   const { handleOnBlur, handleOnMouseEnter, handleOnMouseLeave, isHovered } =
     useInteractiveStates();
 
-  const [isSelected, setIsSelected] = useState(selected);
   const { isFocusVisible } = useFocusVisible();
 
-  useEffect(() => {
-    setIsSelected(selected);
-  }, [selected]);
-
   const classes = classnames(styles.tile, styles.tileWidth, {
-    [styles.selected]: isSelected,
+    [styles.selected]: selected,
     [styles.hovered]: isHovered && !isFocusVisible,
     [styles.disabled]: disabled,
   });
 
   const handleClick: OnTapType = ({ event }) => {
-    onTap?.({ event, id, selected: !isSelected });
-    setIsSelected(!isSelected);
+    onTap?.({ event, id, selected: !selected });
   };
 
   const handleKeyDown = ({
@@ -132,22 +152,18 @@ export default function Tile({
     event: SyntheticKeyboardEvent<HTMLDivElement> | SyntheticKeyboardEvent<HTMLAnchorElement>,
   |}) => {
     if (event.key === 'ENTER') {
-      setIsSelected(!isSelected);
-      onTap?.({ event, id, selected: !isSelected });
+      onTap?.({ event, id, selected: !selected });
     }
   };
 
-  const colorStyles: {| borderColor?: string, backgroundColor?: string |} = {};
-  if (isSelected && !disabled) {
-    // the internal base component uses hex codes
-    // but could be passed in pre-tokenized values
-    if (borderColor && borderColor.startsWith('#')) {
-      colorStyles.borderColor = `${borderColor}`;
-    }
-    if (bgColor && bgColor.startsWith('#')) {
-      colorStyles.backgroundColor = `${bgColor}`;
-    }
-  }
+  const colorStyles: {| borderColor?: string, backgroundColor?: string |} = {
+    borderColor,
+    backgroundColor: bgColor,
+  };
+
+  const tileStyle = getTileColors({ hovered: isHovered, selected, disabled }, colorStyles);
+
+  const checkBoxStyle = getCheckboxColors({ hovered: isHovered, selected, disabled }, colorStyles);
 
   return (
     <Box position="relative">
@@ -162,19 +178,16 @@ export default function Tile({
           onMouseLeave={handleOnMouseLeave}
           onKeyDown={handleKeyDown}
         >
-          <div className={classes} style={colorStyles}>
+          <div className={classes} style={tileStyle}>
             <Flex direction="row" gap={2}>
               {children}
               {showCheckbox && (
                 <InternalCheckbox
                   id={id}
-                  checked={isSelected}
+                  checked={selected}
                   readOnly
                   size="sm"
-                  style={{
-                    backgroundColor: isSelected ? colorStyles.borderColor : 'transparent',
-                    borderColor: 'transparent',
-                  }}
+                  style={checkBoxStyle}
                 />
               )}
             </Flex>
