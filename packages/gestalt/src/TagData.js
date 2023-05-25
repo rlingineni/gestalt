@@ -16,34 +16,43 @@ type Props = {|
    */
   onRemove: ({| event: SyntheticMouseEvent<HTMLButtonElement> |}) => void,
   /**
+   * Size of the Tag Data, see the [sizes](https://gestalt.pinterest.systems.com/web/tagdata#sizes) variant
+   */
+  size?: 'sm' | 'md' | 'lg',
+  /**
    * Short text to render inside the Tag.
    */
   text: string,
-  /**
-   * Communicate a "warning" or "error" state to the user, with an accompanying icon and specific background color.
-   */
-  type?: 'default' | 'error' | 'warning',
 |};
 
 /**
  * [Tags](https://gestalt.pinterest.systems/web/tag) are objects that hold text and have a delete icon to remove them. They can appear within [TextFields](https://gestalt.pinterest.systems/web/textfield#tagsExample), [TextAreas](https://gestalt.pinterest.systems/web/textarea#tagsExample), [ComboBox](https://gestalt.pinterest.systems/web/combobox#Tags) or as standalone components.
+ *
  * ![Tag light mode](https://raw.githubusercontent.com/pinterest/gestalt/master/playwright/visual-test/Tag.spec.mjs-snapshots/Tag-chromium-darwin.png)
  * ![Tag dark mode](https://raw.githubusercontent.com/pinterest/gestalt/master/playwright/visual-test/Tag-dark.spec.mjs-snapshots/Tag-dark-chromium-darwin.png)
  */
-export default function Tag({
+export default function TagData({
   accessibilityRemoveIconLabel,
   disabled = false,
   onRemove,
+  size = 'md',
   text,
-  type = 'default',
 }: Props): Node {
+  const sizes = {
+    'sm': { height: 32, font: '200' },
+    'lg': { height: 48, font: '300' },
+    'md': { height: 40, font: '200' },
+  };
+
   return (
     <InternalTag
       accessibilityRemoveIconLabel={accessibilityRemoveIconLabel}
+      containerHeight={sizes[size].height}
       disabled={disabled}
+      fontSize={sizes[size].fontSize}
       onRemove={onRemove}
       text={text}
-      type={type}
+      type="default"
     />
   );
 }
