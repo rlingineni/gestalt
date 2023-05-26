@@ -58,6 +58,7 @@ type TapAreaType = {|
   accessibilityChecked?: boolean,
   accessibilityControls?: string,
   accessibilityExpanded?: boolean,
+  accessibilityPressed?: boolean,
   accessibilityHaspopup?: boolean,
   role?: 'button' | 'switch',
 |};
@@ -263,10 +264,11 @@ const TapAreaWithForwardRef: AbstractComponent<unionProps, unionRefs> = forwardR
   }
 
   const {
+    accessibilityChecked,
     accessibilityControls,
     accessibilityExpanded,
     accessibilityHaspopup,
-    accessibilityChecked,
+    accessibilityPressed,
     role,
   } = props;
   return (
@@ -276,6 +278,7 @@ const TapAreaWithForwardRef: AbstractComponent<unionProps, unionRefs> = forwardR
       aria-disabled={disabled}
       aria-expanded={accessibilityExpanded}
       aria-haspopup={accessibilityHaspopup}
+      aria-pressed={accessibilityPressed}
       aria-label={accessibilityLabel}
       className={buttonRoleClasses}
       onClick={handleClick}

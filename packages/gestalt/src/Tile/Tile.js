@@ -177,6 +177,7 @@ export default function Tile({
           onMouseEnter={handleOnMouseEnter}
           onMouseLeave={handleOnMouseLeave}
           onKeyDown={handleKeyDown}
+          accesibilityPressed={selected}
         >
           <div className={classes} style={tileStyle}>
             <Flex direction="row" gap={2}>
