@@ -170,6 +170,7 @@ export default function Tile({
       <MaybeTooltip tooltip={tooltip} disabled={disabled}>
         <TapArea
           role="button"
+          accessibilityPressed={selected && !disabled}
           disabled={disabled}
           rounding={4}
           onBlur={handleOnBlur}
@@ -177,7 +178,6 @@ export default function Tile({
           onMouseEnter={handleOnMouseEnter}
           onMouseLeave={handleOnMouseLeave}
           onKeyDown={handleKeyDown}
-          accesibilityPressed={selected}
         >
           <div className={classes} style={tileStyle}>
             <Flex direction="row" gap={2}>
