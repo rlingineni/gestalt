@@ -67,7 +67,7 @@ function SortIcon({
 }: {|
   align: 'start' | 'end',
   status: 'active' | 'inactive',
-  sortOrder: 'acs' | 'desc',
+  sortOrder: 'asc' | 'desc',
   visibility: 'visible' | 'hidden',
 |}) {
   return (
