@@ -52,8 +52,10 @@ export default function SortableHeaderExample(): Node {
           <Table.Cell>
             <Text>Snax</Text>
           </Table.Cell>
-          <Table.Cell>
-            <Text align="end">$50</Text>
+          <Table.Cell colSpan={5}>
+            <Box width={200}>
+              <Text align="end">$50</Text>
+            </Box>
           </Table.Cell>
         </Table.Row>
       </Table>
