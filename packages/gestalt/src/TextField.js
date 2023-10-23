@@ -12,14 +12,14 @@ import Tag from './Tag.js';
 import InternalTextField from './TextField/InternalTextField.js';
 import InternalTextFieldIconButton from './TextField/InternalTextFieldIconButton.js';
 
-export type MaxLength = {|
+export type MaxLength = {
   characterCount: number,
   errorAccessibilityLabel: string,
-|};
+};
 
 type Type = 'date' | 'email' | 'password' | 'tel' | 'text' | 'url';
 
-type Props = {|
+type Props = {
   /**
    * Indicate if autocomplete should be available on the input, and the type of autocomplete. Autocomplete values are implemented upon request. [Reach out to the Gestalt team](https://gestalt.pinterest.systems/team_support/get_help#Slack-channels) if you need [additional autocomplete values](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete#values) to be supported.
    */
@@ -71,31 +71,31 @@ type Props = {|
   /**
    * Callback triggered when the user blurs the input.
    */
-  onBlur?: ({|
+  onBlur?: ({
     event: SyntheticFocusEvent<HTMLInputElement>,
     value: string,
-  |}) => void,
+  }) => void,
   /**
    * Callback triggered when the value of the input changes.
    */
-  onChange: ({|
+  onChange: ({
     event: SyntheticInputEvent<HTMLInputElement>,
     value: string,
-  |}) => void,
+  }) => void,
   /**
    * Callback triggered when the user focuses the input.
    */
-  onFocus?: ({|
+  onFocus?: ({
     event: SyntheticFocusEvent<HTMLInputElement>,
     value: string,
-  |}) => void,
+  }) => void,
   /**
    * Callback triggered when the user presses any key while the input is focused.
    */
-  onKeyDown?: ({|
+  onKeyDown?: ({
     event: SyntheticKeyboardEvent<HTMLInputElement>,
     value: string,
-  |}) => void,
+  }) => void,
   /**
    * Placeholder text shown the the user has not yet input a value.
    */
@@ -117,14 +117,14 @@ type Props = {|
    */
   type?: Type,
   /**
-   * md: 40px, lg: 48px
+   * sm:'32px', md: 40px (default), lg: 48px. See the [size variant](https://gestalt.pinterest.systems/web/textfield#Size) for more details.
    */
-  size?: 'md' | 'lg',
+  size?: 'sm' | 'md' | 'lg',
   /**
    * The current value of the input.
    */
   value?: string,
-|};
+};
 
 /**
  * [TextField](https://gestalt.pinterest.systems/web/textfield) allows for multiple types of text input.

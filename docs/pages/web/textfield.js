@@ -3,6 +3,7 @@ import { type Node } from 'react';
 import AccessibilitySection from '../../docs-components/AccessibilitySection.js';
 import docGen, { type DocGen } from '../../docs-components/docgen.js';
 import GeneratedPropTable from '../../docs-components/GeneratedPropTable.js';
+import LocalizationSection from '../../docs-components/LocalizationSection.js';
 import MainSection from '../../docs-components/MainSection.js';
 import Page from '../../docs-components/Page.js';
 import PageHeader from '../../docs-components/PageHeader.js';
@@ -20,6 +21,7 @@ import errorMessageExample from '../../examples/textfield/errorMessageExample.js
 import helperTextExplainOptionalInfo from '../../examples/textfield/helperTextExplainOptionalInfo.js';
 import labelsExample from '../../examples/textfield/labelsExample.js';
 import labelVisibilityExample from '../../examples/textfield/labelVisibilityExample.js';
+import localizationLabels from '../../examples/textfield/localizationLabels.js';
 import main from '../../examples/textfield/main.js';
 import maximumLengthExample from '../../examples/textfield/maximumLengthExample.js';
 import maximumLengthExampleSingleLine from '../../examples/textfield/maximumLengthExampleSingleLine.js';
@@ -31,11 +33,12 @@ import onlyPlaceRelatedFieldsSameLine from '../../examples/textfield/onlyPlaceRe
 import passwordExample from '../../examples/textfield/passwordExample.js';
 import provideClearUsefulErrorMessages from '../../examples/textfield/provideClearUsefulErrorMessages.js';
 import readOnlyExample from '../../examples/textfield/readOnlyExample.js';
+import TextFieldSizes from '../../examples/textfield/sizesExample.js';
 import tagsExample from '../../examples/textfield/tagsExample.js';
 import textFieldRefAnchorPopover from '../../examples/textfield/textFieldRefAnchorPopover.js';
 import useHelperTextImportantInformation from '../../examples/textfield/useHelperTextImportantInformation.js';
 
-export default function DocsPage({ generatedDocGen }: {| generatedDocGen: DocGen |}): Node {
+export default function DocsPage({ generatedDocGen }: { generatedDocGen: DocGen }): Node {
   return (
     <Page title={generatedDocGen?.displayName}>
       <PageHeader name={generatedDocGen?.displayName} description={generatedDocGen?.description}>
@@ -270,10 +273,7 @@ export default function DocsPage({ generatedDocGen }: {| generatedDocGen: DocGen
         />
       </AccessibilitySection>
 
-      <MainSection
-        name="Localization"
-        description={`Be sure to localize \`errorMessage\`, \`helperText\`, \`label\`, \`maxLength\`'s \`errorAccessibilityLabel\` and \`placeholder\`.`}
-      />
+      <LocalizationSection code={localizationLabels} name={generatedDocGen?.displayName} />
 
       <MainSection name="Variants">
         <MainSection.Subsection
@@ -468,6 +468,14 @@ The first example shows an empty Textfield with \`maxLength\` set to 20 characte
             }
           />
         </MainSection.Subsection>
+        <MainSection.Subsection
+          title="Size"
+          description="TextField can have different sizes. The default size is medium (40px). The large size is 48px. For a dense variant, use the `sm` (32px) variant."
+        >
+          <MainSection.Card
+            sandpackExample={<SandpackExample name="TextField Sizes" code={TextFieldSizes} />}
+          />
+        </MainSection.Subsection>
       </MainSection>
 
       <QualityChecklist component={generatedDocGen?.displayName} />
@@ -490,7 +498,9 @@ The first example shows an empty Textfield with \`maxLength\` set to 20 characte
   );
 }
 
-export async function getServerSideProps(): Promise<{| props: {| generatedDocGen: DocGen |} |}> {
+export async function getServerSideProps(): Promise<{
+  props: { generatedDocGen: DocGen },
+}> {
   return {
     props: { generatedDocGen: await docGen('TextField') },
   };
