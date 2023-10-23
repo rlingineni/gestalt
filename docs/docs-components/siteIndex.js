@@ -101,6 +101,7 @@ const siteIndex: $ReadOnlyArray<siteIndexType> = [
         pages: [
           'ColorSchemeProvider',
           'DefaultLabelProvider',
+          'DensityProvider',
           'DeviceTypeProvider',
           'GlobalEventsHandlerProvider',
           'ScrollBoundaryContainer',

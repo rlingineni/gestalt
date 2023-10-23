@@ -16,6 +16,7 @@ import ComboBox from './ComboBox.js';
 import Container from './Container.js';
 import ColorSchemeProvider, { useColorScheme } from './contexts/ColorSchemeProvider.js';
 import DefaultLabelProvider, { useDefaultLabelContext } from './contexts/DefaultLabelProvider.js';
+import DensityProvider, { useDensityContext } from './contexts/DensityProvider.js';
 import DeviceTypeProvider, { useDeviceType } from './contexts/DeviceTypeProvider.js';
 import ExperimentProvider from './contexts/ExperimentProvider.js';
 import GlobalEventsHandlerProvider, {
@@ -103,6 +104,7 @@ export {
   Container,
   Datapoint,
   DefaultLabelProvider,
+  DensityProvider,
   DeviceTypeProvider,
   Divider,
   Dropdown,
@@ -165,6 +167,7 @@ export {
   Upsell,
   useColorScheme,
   useDefaultLabelContext as useDefaultLabel,
+  useDensityContext,
   useDeviceType,
   useFocusVisible,
   useGlobalEventsHandlerContext as useGlobalEventsHandler,

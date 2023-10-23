@@ -19,6 +19,7 @@ import { type AbstractComponent, type Element, forwardRef, type Node } from 'rea
 import styles from './Box.css';
 import { buildStyles } from './boxTransforms.js';
 import { type As } from './boxTypes.js';
+import { useDensityContext } from './contexts/DensityProvider.js';
 import { type Indexable } from './zIndex.js';
 
 /*
@@ -549,6 +550,45 @@ const disallowedProps = [
 
 type OutputType = Element<As>;
 
+// to-do: move to provider
+const getDensityPaddings = (size: 'small' | 'medium' | 'large', props: Props) => {
+  // no change needed for medium
+  if (size === 'medium') return {};
+
+  const densityProps = [
+    'padding',
+    'paddingX',
+    'paddingY',
+    'smPadding',
+    'smPaddingX',
+    'smPaddingY',
+    'lgPadding',
+    'lgPaddingX',
+    'lgPaddingY',
+  ];
+
+  const getNewDensity = (currPaddingValue: Number) => {
+    let updatedPadding = currPaddingValue;
+    if (size === 'large') {
+      updatedPadding = Math.min(currPaddingValue + 1, 12);
+    }
+
+    if (size === 'small') {
+      updatedPadding = Math.max(0, currPaddingValue - 1);
+    }
+    return updatedPadding;
+  };
+
+  const updatedDensityPaddings = {};
+  densityProps.forEach((curr) => {
+    if (curr in props) {
+      updatedDensityPaddings[curr] = getNewDensity(props[curr]);
+    }
+  });
+
+  return updatedDensityPaddings;
+};
+
 /**
  * [Box](https://gestalt.pinterest.systems/web/box) is a component primitive that can be used to build the foundation of pretty much any other component. It keeps details like spacing, borders and colors consistent with the rest of Gestalt, while allowing the developer to focus on the content.
  *
@@ -558,9 +598,17 @@ type OutputType = Element<As>;
  */
 const BoxWithForwardRef: AbstractComponent<Props, HTMLElement> = forwardRef<Props, HTMLElement>(
   function Box({ as, ...props }: Props, ref): OutputType {
+    // use density provider
+    // if densityprovider is size small -> decrease or increase padding by 1 scale
+
+    const { size } = useDensityContext();
+
+    const densityProps = getDensityPaddings(size, props);
+    const allowedProps = { ...props, ...densityProps };
+
     const { passthroughProps, propsStyles } = buildStyles<$Diff<Props, { as?: As }>>({
       baseStyles: styles.box,
-      props,
+      props: allowedProps,
       blocklistProps: disallowedProps,
     });
 
