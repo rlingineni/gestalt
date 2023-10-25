@@ -27,7 +27,9 @@ type Props = {
    */
   accessibilityLabel?: string,
   /**
+   * Set the aria-checked attribute to true or false to represent the state of a component with a toggle functionality.
    *
+   * Used with the role="switch" to convey the state of the component.
    */
   accessibilityChecked?: boolean,
   /**

@@ -150,12 +150,13 @@ export default function TileData({
     <MaybeTooltip tooltip={tooltip} disabled={disabled}>
       <Box maxWidth={196}>
         <TapArea
+          accesibilityChecked={selected}
           disabled={disabled}
           onBlur={handleOnBlur}
           onTap={({ event }) => onTap?.({ event, id, selected: !selected })}
           onMouseEnter={handleOnMouseEnter}
           onMouseLeave={handleOnMouseLeave}
-          role="button"
+          role="switch"
           rounding={4}
         >
           <div style={tileStyle} className={getClasses()}>

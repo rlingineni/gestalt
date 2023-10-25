@@ -198,12 +198,13 @@ export default function TagData({
         <TapArea
           fullHeight
           fullWidth
+          accesibilityChecked={selected}
           disabled={disabled}
           onBlur={handleOnBlur}
           onTap={({ event }) => onTap?.({ event, id, selected: !selected })}
           onMouseEnter={handleOnMouseEnter}
           onMouseLeave={handleOnMouseLeave}
-          role="button"
+          role="switch"
           rounding={2}
         >
           <div className={getTagClasses()} style={tileStyle}>
