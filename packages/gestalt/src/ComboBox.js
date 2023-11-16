@@ -30,7 +30,7 @@ import handleContainerScrolling, {
 } from './utils/keyboardNavigation.js';
 import { type Indexable } from './zIndex.js';
 
-type Size = 'md' | 'lg';
+type Size = 'sm' | 'md' | 'lg';
 
 type OptionType = {
   label: string,
@@ -140,7 +140,7 @@ type Props = {
    */
   selectedOption?: OptionType,
   /**
-   * Defines the height of ComboBox: md: 40px, lg: 48px. Width is defined by parent component.
+   * Defines the height of ComboBox: sm:32px, md: 40px, lg: 48px. Width is defined by parent component.
    */
   size?: Size,
   /**

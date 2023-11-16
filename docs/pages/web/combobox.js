@@ -17,6 +17,7 @@ import localizationLabels from '../../examples/combobox/localizationLabels.js';
 import main from '../../examples/combobox/main.js';
 import programmatic from '../../examples/combobox/programmatic.js';
 import ref from '../../examples/combobox/ref.js';
+import sizes from '../../examples/combobox/sizes.js';
 import subtext from '../../examples/combobox/subtext.js';
 import tags from '../../examples/combobox/tags.js';
 import uncontrolled from '../../examples/combobox/uncontrolled.js';
@@ -214,7 +215,19 @@ export default function ComboBoxPage({ generatedDocGen }: { generatedDocGen: Doc
             }
           />
         </MainSection.Subsection>
+        <MainSection.Subsection
+          title="Sizes"
+          description="For most use cases, pass a string with a helpful error message (be sure to localize!). In certain instances it can be useful to make some text clickable; to support this, you may instead pass a React.Node to wrap text in [Link](/web/link) or [TapArea](/web/taparea)"
+        >
+          <MainSection.Card
+            cardSize="lg"
+            sandpackExample={
+              <SandpackExample code={sizes} name="Error example" previewHeight={PREVIEW_HEIGHT} />
+            }
+          />
+        </MainSection.Subsection>
       </MainSection>
+
       <QualityChecklist component={generatedDocGen?.displayName} />
       <MainSection name="Related">
         <MainSection.Subsection
