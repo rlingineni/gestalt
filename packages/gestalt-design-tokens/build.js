@@ -236,13 +236,24 @@ function buildShadowValue(values, platform) {
 
   return Object.values(values)
     .map((value) => {
-      const shadowColor = tinycolor(value.color);
-      shadowColor.setAlpha(value.opacity);
-      shadowColor.toRgbString();
+      let rgbString = value.color;
+      const hexCode = tinycolor(rgbString).toHex();
+      const opacity = tinycolor(rgbString).getAlpha();
+
+      // other format
+      if (value.opacity) {
+        const shadowColor = tinycolor(rgbString);
+        shadowColor.setAlpha(value.opacity);
+        rgbString = shadowColor.toRgbString();
+      }
+
+      const base = `${value.x || value.offsetX} ${value.y || value.offsetY} ${
+        value.blur || value.blurRadius
+      } ${value.spread || value.spreadRadius}`;
 
       return platform === 'css'
-        ? `${value.offsetX}px ${value.offsetY}px ${value.blurRadius}px ${value.spreadRadius}px ${shadowColor}`
-        : `${value.offsetX}px ${value.offsetY}px ${value.blurRadius}px ${value.spreadRadius}px ${value.color} ${value.opacity}`;
+        ? `${base} ${rgbString}`
+        : `${base} #${hexCode.toUpperCase()} ${opacity}`;
     })
     .join(', ');
 }
@@ -305,14 +316,22 @@ function getSources({ theme, modeTheme, platform, language }) {
   }
 
   return [
-    'tokens/vr-theme/base/color.json',
+    'tokens/vr-theme/base/color/default.json',
     `tokens/vr-theme/base/elevation/${modeTheme}.json`,
     'tokens/vr-theme/base/font.json',
     'tokens/vr-theme/base/opacity.json',
     'tokens/vr-theme/base/rounding.json',
     'tokens/vr-theme/base/space.json',
     'tokens/vr-theme/base/lineheight.json',
-    `tokens/vr-theme/sema/color/${modeTheme}.json`,
+    `tokens/vr-theme/sema/color/${modeTheme}/default.json`,
+    platform === 'web'
+      ? [
+          'tokens/vr-theme/base/color/pressed.json',
+          'tokens/vr-theme/base/color/hover.json',
+          `tokens/vr-theme/sema/color/${modeTheme}/hover.json`,
+          'tokens/vr-theme/base/color/hover.json',
+        ]
+      : [],
     `tokens/vr-theme/sema/elevation.json`,
     `tokens/vr-theme/sema/font.json`,
     `tokens/vr-theme/sema/opacity.json`,
