@@ -236,19 +236,21 @@ function buildShadowValue(values, platform) {
 
   return Object.values(values)
     .map((value) => {
-      // we have two formats for opacity
+      //  Note: we have two formats for elevation tokens.
+      //  Classic and VR use a new set of properties
 
       let rgbString = value.color;
       const hexCode = tinycolor(rgbString).toHex();
       const opacity = tinycolor(rgbString).getAlpha();
 
-      // other format
+      // older format has an explicit opacity value
       if ('opacity' in value) {
         const shadowColor = tinycolor(rgbString);
         shadowColor.setAlpha(value.opacity);
         rgbString = shadowColor.toRgbString();
       }
 
+      // strip the px ending in the value of the object, if it exists, we re-add it below
       Object.keys(value).forEach((k) => {
         if (typeof value[k] === 'string') {
           value[k] = value[k].replace('px', '');
