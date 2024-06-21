@@ -33,8 +33,8 @@
       "value": "28px"
     },
     "32": {
-      "value": "32px",
-      "type": "other"
+      "type": "borderRadius",
+      "value": "32px"
     },
     "999": {
       "type": "borderRadius",

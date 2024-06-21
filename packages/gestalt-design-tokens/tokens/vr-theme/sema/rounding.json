@@ -2,47 +2,52 @@
   "rounding": {
     "date": {
       "container": {
-        "value": "{rounding.16}",
-        "type": "other"
+        "type": "other",
+        "value": "{rounding.16}"
       },
       "range": {
         "middle": {
-          "value": "{rounding.0}",
-          "type": "other"
+          "type": "other",
+          "value": "{rounding.0}"
         }
       },
       "start": {
-        "value": "{rounding.circle} {rounding.0} {rounding.0} {rounding.circle}",
-        "type": "other"
+        "type": "other",
+        "value": "{rounding.circleappendaappenda} {rounding.0} {rounding.0} {rounding.circle}"
       },
       "end": {
-        "value": "{rounding.0} {rounding.circle} {rounding.circle} {rounding.0}",
-        "type": "other"
+        "type": "other",
+        "value": "{rounding.0} {rounding.circleappendaappenda} {rounding.circle} {rounding.0}"
       }
     },
     "XL": {
-      "value": "{rounding.20}",
-      "type": "other"
+      "type": "other",
+      "value": "{rounding.20}"
     },
     "LG": {
-      "value": "{rounding.16}",
-      "type": "other"
+      "type": "other",
+      "value": "{rounding.16}"
     },
     "MD": {
-      "value": "{rounding.12}",
-      "type": "other"
+      "type": "other",
+      "value": "{rounding.12}"
     },
     "SM": {
-      "value": "{rounding.8}",
-      "type": "other"
+      "type": "other",
+      "value": "{rounding.8}"
     },
     "XS": {
-      "value": "{rounding.4}",
-      "type": "other"
+      "type": "other",
+      "value": "{rounding.4}"
     },
     "circleappenda": {
-      "value": "{rounding.circle}",
-      "type": "other"
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {}
+        }
+      },
+      "type": "other",
+      "value": "{rounding.circle}"
     }
   }
 }

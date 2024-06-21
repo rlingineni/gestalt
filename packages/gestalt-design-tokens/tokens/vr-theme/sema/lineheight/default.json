@@ -2,24 +2,24 @@
   "font": {
     "lineheight": {
       "XXS": {
-        "value": "{font.lineheight.110}",
-        "type": "other"
+        "type": "other",
+        "value": "{font.lineheight.110}"
       },
       "XS": {
-        "value": "{font.lineheight.120}",
-        "type": "other"
+        "type": "other",
+        "value": "{font.lineheight.120}"
       },
       "MD": {
-        "value": "{font.lineheight.130}",
-        "type": "other"
+        "type": "other",
+        "value": "{font.lineheight.130}"
       },
       "LG": {
-        "value": "{font.lineheight.140}",
-        "type": "other"
+        "type": "other",
+        "value": "{font.lineheight.140}"
       },
       "XL": {
-        "value": "{font.lineheight.150}",
-        "type": "other"
+        "type": "other",
+        "value": "{font.lineheight.150}"
       }
     }
   }
