@@ -861,11 +861,11 @@ public enum GestaltTokensColorVR {
 import SwiftUI
 
 public enum GestaltTokensElevationDarkVR {
-    public static let base350 = 0pxpx -2pxpx 8pxpx 0pxpx #000000 0.3, 0pxpx -1pxpx 2pxpx 0pxpx #000000 0.3
-    public static let base325 = 0pxpx 2pxpx 8pxpx 0pxpx #000000 0.3, 0pxpx 1pxpx 2pxpx 0pxpx #000000 0.3
-    public static let base300 = 0pxpx 1pxpx 6pxpx 0.5pxpx #000000 0.3, 0pxpx 1pxpx 2pxpx 0pxpx #000000 0.3
-    public static let base200 = 0pxpx 4pxpx 16pxpx 0pxpx #000000 0.2, 0pxpx 1pxpx 4pxpx 0pxpx #000000 0.2
-    public static let base100 = 0pxpx 1pxpx 2pxpx 0pxpx #000000 0.3, 0pxpx 0pxpx 1pxpx 0pxpx #000000 0.28
+    public static let base350 = 0px -2px 8px 0px #000000 0.3, 0px -1px 2px 0px #000000 0.3
+    public static let base325 = 0px 2px 8px 0px #000000 0.3, 0px 1px 2px 0px #000000 0.3
+    public static let base300 = 0px 1px 6px 0.5px #000000 0.3, 0px 1px 2px 0px #000000 0.3
+    public static let base200 = 0px 4px 16px 0px #000000 0.2, 0px 1px 4px 0px #000000 0.2
+    public static let base100 = 0px 1px 2px 0px #000000 0.3, 0px 0px 1px 0px #000000 0.28
     public static let semaRaisedBottom = base350
     public static let semaRaisedTop = base325
     public static let semaRaisedDefault = base300
@@ -880,11 +880,11 @@ public enum GestaltTokensElevationDarkVR {
 import SwiftUI
 
 public enum GestaltTokensElevationVR {
-    public static let base350 = 0pxpx -1pxpx 0pxpx 0.5pxpx #000000 0.06, 0pxpx -2pxpx 8pxpx 0pxpx #000000 0.12, 0pxpx -1pxpx 2pxpx 0pxpx #000000 0.06
-    public static let base325 = 0pxpx 1pxpx 0pxpx 0.5pxpx #000000 0.06, 0pxpx 2pxpx 8pxpx 0pxpx #000000 0.12, 0pxpx -1pxpx 2pxpx 0pxpx #000000 0.06
-    public static let base300 = 0pxpx 0pxpx 0pxpx 0.5pxpx #000000 0.06, 0pxpx 1pxpx 6pxpx 0pxpx #000000 0.1, 0pxpx 1pxpx 2pxpx 0pxpx #000000 0.06
-    public static let base200 = 0pxpx 4pxpx 16pxpx 0pxpx #000000 0.1, 0pxpx 1pxpx 4pxpx 0pxpx #000000 0.08
-    public static let base100 = 0pxpx 1pxpx 2pxpx 0pxpx #000000 0.1, 0pxpx 0pxpx 1pxpx 0pxpx #000000 0.08
+    public static let base350 = 0px -1px 0px 0.5px #000000 0.06, 0px -2px 8px 0px #000000 0.12, 0px -1px 2px 0px #000000 0.06
+    public static let base325 = 0px 1px 0px 0.5px #000000 0.06, 0px 2px 8px 0px #000000 0.12, 0px -1px 2px 0px #000000 0.06
+    public static let base300 = 0px 0px 0px 0.5px #000000 0.06, 0px 1px 6px 0px #000000 0.1, 0px 1px 2px 0px #000000 0.06
+    public static let base200 = 0px 4px 16px 0px #000000 0.1, 0px 1px 4px 0px #000000 0.08
+    public static let base100 = 0px 1px 2px 0px #000000 0.1, 0px 0px 1px 0px #000000 0.08
     public static let semaRaisedBottom = base350
     public static let semaRaisedTop = base325
     public static let semaRaisedDefault = base300

@@ -236,20 +236,28 @@ function buildShadowValue(values, platform) {
 
   return Object.values(values)
     .map((value) => {
+      // we have two formats for opacity
+
       let rgbString = value.color;
       const hexCode = tinycolor(rgbString).toHex();
       const opacity = tinycolor(rgbString).getAlpha();
 
       // other format
-      if (value.opacity) {
+      if ('opacity' in value) {
         const shadowColor = tinycolor(rgbString);
         shadowColor.setAlpha(value.opacity);
         rgbString = shadowColor.toRgbString();
       }
 
-      const base = `${value.x || value.offsetX}px ${value.y || value.offsetY}px ${
-        value.blur || value.blurRadius
-      }px ${value.spread || value.spreadRadius}px`;
+      Object.keys(value).forEach((k) => {
+        if (typeof value[k] === 'string') {
+          value[k] = value[k].replace('px', '');
+        }
+      });
+
+      const base = `${value.x ?? value.offsetX}px ${value.y ?? value.offsetY}px ${
+        value.blur ?? value.blurRadius
+      }px ${value.spread ?? value.spreadRadius}px`;
 
       return platform === 'css'
         ? `${base} ${rgbString}`

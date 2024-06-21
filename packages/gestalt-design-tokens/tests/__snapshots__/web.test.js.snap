@@ -5,8 +5,8 @@ Object {
   "dist/css/classic/variables-dark.css": "
 :root {
   --elevation-datepicker: 0px 0px 8px 0px rgba(250, 250, 250, 0.06); 
-  --elevation-raised-bottom: 0px -0.5px 0px 0px #F9F9F9; 
-  --elevation-raised-top: 0px 0.5px 0px 0px #F9F9F9; 
+  --elevation-raised-bottom: 0px -0.5px 0px 0px rgba(249, 249, 249, 0); 
+  --elevation-raised-top: 0px 0.5px 0px 0px rgba(249, 249, 249, 0); 
   --elevation-floating: none; 
   --color-data-visualization-04: #fda600; 
   --color-data-visualization-03: #b190ff; 
@@ -746,11 +746,11 @@ Object {
 ",
   "dist/css/vr-theme-web-mapping/variables-dark.css": "
 :root {
-  --base-elevation-350: 0pxpx -2pxpx 8pxpx 0pxpx rgba(0,0,0,0.3), 0pxpx -1pxpx 2pxpx 0pxpx rgba(0,0,0,0.3);
-  --base-elevation-325: 0pxpx 2pxpx 8pxpx 0pxpx rgba(0,0,0,0.3), 0pxpx 1pxpx 2pxpx 0pxpx rgba(0,0,0,0.3);
-  --base-elevation-300: 0pxpx 1pxpx 6pxpx 0.5pxpx rgba(0,0,0,0.3), 0pxpx 1pxpx 2pxpx 0pxpx rgba(0,0,0,0.3);
-  --base-elevation-200: 0pxpx 4pxpx 16pxpx 0pxpx rgba(0,0,0,0.2), 0pxpx 1pxpx 4pxpx 0pxpx rgba(0,0,0,0.2);
-  --base-elevation-100: 0pxpx 1pxpx 2pxpx 0pxpx rgba(0,0,0,0.3), 0pxpx 0pxpx 1pxpx 0pxpx rgba(0,0,0,0.28);
+  --base-elevation-350: 0px -2px 8px 0px rgba(0,0,0,0.3), 0px -1px 2px 0px rgba(0,0,0,0.3);
+  --base-elevation-325: 0px 2px 8px 0px rgba(0,0,0,0.3), 0px 1px 2px 0px rgba(0,0,0,0.3);
+  --base-elevation-300: 0px 1px 6px 0.5px rgba(0,0,0,0.3), 0px 1px 2px 0px rgba(0,0,0,0.3);
+  --base-elevation-200: 0px 4px 16px 0px rgba(0,0,0,0.2), 0px 1px 4px 0px rgba(0,0,0,0.2);
+  --base-elevation-100: 0px 1px 2px 0px rgba(0,0,0,0.3), 0px 0px 1px 0px rgba(0,0,0,0.28);
   --base-color-pressed-dataviz-09: #f2681f;
   --base-color-pressed-dataviz-08: #400387;
   --base-color-pressed-dataviz-07: #00ab55;
@@ -1370,11 +1370,11 @@ Object {
   --base-font-weight-700: 700;
   --base-font-weight-500: 500;
   --base-font-weight-400: 400;
-  --base-elevation-350: 0pxpx -1pxpx 0pxpx 0.5pxpx rgba(0,0,0,0.06), 0pxpx -2pxpx 8pxpx 0pxpx rgba(0,0,0,0.12), 0pxpx -1pxpx 2pxpx 0pxpx rgba(0,0,0,0.06);
-  --base-elevation-325: 0pxpx 1pxpx 0pxpx 0.5pxpx rgba(0,0,0,0.06), 0pxpx 2pxpx 8pxpx 0pxpx rgba(0,0,0,0.12), 0pxpx -1pxpx 2pxpx 0pxpx rgba(0,0,0,0.06);
-  --base-elevation-300: 0pxpx 0pxpx 0pxpx 0.5pxpx rgba(0,0,0,0.06), 0pxpx 1pxpx 6pxpx 0pxpx rgba(0,0,0,0.1), 0pxpx 1pxpx 2pxpx 0pxpx rgba(0,0,0,0.06);
-  --base-elevation-200: 0pxpx 4pxpx 16pxpx 0pxpx rgba(0,0,0,0.1), 0pxpx 1pxpx 4pxpx 0pxpx rgba(0,0,0,0.08);
-  --base-elevation-100: 0pxpx 1pxpx 2pxpx 0pxpx rgba(0,0,0,0.1), 0pxpx 0pxpx 1pxpx 0pxpx rgba(0,0,0,0.08);
+  --base-elevation-350: 0px -1px 0px 0.5px rgba(0,0,0,0.06), 0px -2px 8px 0px rgba(0,0,0,0.12), 0px -1px 2px 0px rgba(0,0,0,0.06);
+  --base-elevation-325: 0px 1px 0px 0.5px rgba(0,0,0,0.06), 0px 2px 8px 0px rgba(0,0,0,0.12), 0px -1px 2px 0px rgba(0,0,0,0.06);
+  --base-elevation-300: 0px 0px 0px 0.5px rgba(0,0,0,0.06), 0px 1px 6px 0px rgba(0,0,0,0.1), 0px 1px 2px 0px rgba(0,0,0,0.06);
+  --base-elevation-200: 0px 4px 16px 0px rgba(0,0,0,0.1), 0px 1px 4px 0px rgba(0,0,0,0.08);
+  --base-elevation-100: 0px 1px 2px 0px rgba(0,0,0,0.1), 0px 0px 1px 0px rgba(0,0,0,0.08);
   --base-color-pressed-dataviz-09: #f2681f;
   --base-color-pressed-dataviz-08: #400387;
   --base-color-pressed-dataviz-07: #00ab55;
@@ -2128,11 +2128,11 @@ Object {
 ",
   "dist/css/vr-theme/variables-dark.css": "
 :root {
-  --base-elevation-350: 0pxpx -2pxpx 8pxpx 0pxpx rgba(0,0,0,0.3), 0pxpx -1pxpx 2pxpx 0pxpx rgba(0,0,0,0.3);
-  --base-elevation-325: 0pxpx 2pxpx 8pxpx 0pxpx rgba(0,0,0,0.3), 0pxpx 1pxpx 2pxpx 0pxpx rgba(0,0,0,0.3);
-  --base-elevation-300: 0pxpx 1pxpx 6pxpx 0.5pxpx rgba(0,0,0,0.3), 0pxpx 1pxpx 2pxpx 0pxpx rgba(0,0,0,0.3);
-  --base-elevation-200: 0pxpx 4pxpx 16pxpx 0pxpx rgba(0,0,0,0.2), 0pxpx 1pxpx 4pxpx 0pxpx rgba(0,0,0,0.2);
-  --base-elevation-100: 0pxpx 1pxpx 2pxpx 0pxpx rgba(0,0,0,0.3), 0pxpx 0pxpx 1pxpx 0pxpx rgba(0,0,0,0.28);
+  --base-elevation-350: 0px -2px 8px 0px rgba(0,0,0,0.3), 0px -1px 2px 0px rgba(0,0,0,0.3);
+  --base-elevation-325: 0px 2px 8px 0px rgba(0,0,0,0.3), 0px 1px 2px 0px rgba(0,0,0,0.3);
+  --base-elevation-300: 0px 1px 6px 0.5px rgba(0,0,0,0.3), 0px 1px 2px 0px rgba(0,0,0,0.3);
+  --base-elevation-200: 0px 4px 16px 0px rgba(0,0,0,0.2), 0px 1px 4px 0px rgba(0,0,0,0.2);
+  --base-elevation-100: 0px 1px 2px 0px rgba(0,0,0,0.3), 0px 0px 1px 0px rgba(0,0,0,0.28);
   --base-color-pressed-dataviz-09: #f2681f;
   --base-color-pressed-dataviz-08: #400387;
   --base-color-pressed-dataviz-07: #00ab55;
@@ -2558,11 +2558,11 @@ Object {
   --base-font-weight-700: 700;
   --base-font-weight-500: 500;
   --base-font-weight-400: 400;
-  --base-elevation-350: 0pxpx -1pxpx 0pxpx 0.5pxpx rgba(0,0,0,0.06), 0pxpx -2pxpx 8pxpx 0pxpx rgba(0,0,0,0.12), 0pxpx -1pxpx 2pxpx 0pxpx rgba(0,0,0,0.06);
-  --base-elevation-325: 0pxpx 1pxpx 0pxpx 0.5pxpx rgba(0,0,0,0.06), 0pxpx 2pxpx 8pxpx 0pxpx rgba(0,0,0,0.12), 0pxpx -1pxpx 2pxpx 0pxpx rgba(0,0,0,0.06);
-  --base-elevation-300: 0pxpx 0pxpx 0pxpx 0.5pxpx rgba(0,0,0,0.06), 0pxpx 1pxpx 6pxpx 0pxpx rgba(0,0,0,0.1), 0pxpx 1pxpx 2pxpx 0pxpx rgba(0,0,0,0.06);
-  --base-elevation-200: 0pxpx 4pxpx 16pxpx 0pxpx rgba(0,0,0,0.1), 0pxpx 1pxpx 4pxpx 0pxpx rgba(0,0,0,0.08);
-  --base-elevation-100: 0pxpx 1pxpx 2pxpx 0pxpx rgba(0,0,0,0.1), 0pxpx 0pxpx 1pxpx 0pxpx rgba(0,0,0,0.08);
+  --base-elevation-350: 0px -1px 0px 0.5px rgba(0,0,0,0.06), 0px -2px 8px 0px rgba(0,0,0,0.12), 0px -1px 2px 0px rgba(0,0,0,0.06);
+  --base-elevation-325: 0px 1px 0px 0.5px rgba(0,0,0,0.06), 0px 2px 8px 0px rgba(0,0,0,0.12), 0px -1px 2px 0px rgba(0,0,0,0.06);
+  --base-elevation-300: 0px 0px 0px 0.5px rgba(0,0,0,0.06), 0px 1px 6px 0px rgba(0,0,0,0.1), 0px 1px 2px 0px rgba(0,0,0,0.06);
+  --base-elevation-200: 0px 4px 16px 0px rgba(0,0,0,0.1), 0px 1px 4px 0px rgba(0,0,0,0.08);
+  --base-elevation-100: 0px 1px 2px 0px rgba(0,0,0,0.1), 0px 0px 1px 0px rgba(0,0,0,0.08);
   --base-color-pressed-dataviz-09: #f2681f;
   --base-color-pressed-dataviz-08: #400387;
   --base-color-pressed-dataviz-07: #00ab55;
