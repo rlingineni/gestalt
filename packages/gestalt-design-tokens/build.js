@@ -247,9 +247,9 @@ function buildShadowValue(values, platform) {
         rgbString = shadowColor.toRgbString();
       }
 
-      const base = `${value.x || value.offsetX} ${value.y || value.offsetY} ${
+      const base = `${value.x || value.offsetX}px ${value.y || value.offsetY}px ${
         value.blur || value.blurRadius
-      } ${value.spread || value.spreadRadius}`;
+      }px ${value.spread || value.spreadRadius}px`;
 
       return platform === 'css'
         ? `${base} ${rgbString}`
