@@ -4,13 +4,24 @@
     "name": "light",
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
-      "sema/color/light": "enabled",
-      "base/color": "enabled",
       "base/elevation/light": "enabled",
       "base/rounding": "enabled",
       "base/space": "enabled",
       "base/font": "enabled",
-      "base/lineheight": "enabled"
+      "base/lineheight": "enabled",
+      "base/opacity": "enabled",
+      "sema/lineheight/default": "enabled",
+      "sema/font": "enabled",
+      "sema/opacity": "enabled",
+      "sema/rounding": "enabled",
+      "sema/space": "enabled",
+      "sema/elevation": "enabled",
+      "base/color/default": "enabled",
+      "sema/color/light/default": "enabled",
+      "base/color/hover": "enabled",
+      "base/color/pressed": "enabled",
+      "sema/color/light/hover": "enabled",
+      "sema/color/light/pressed": "enabled"
     },
     "group": "colors"
   },
@@ -19,13 +30,24 @@
     "name": "dark",
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
-      "sema/color/dark": "enabled",
-      "base/color": "enabled",
       "base/elevation/dark": "enabled",
       "base/rounding": "enabled",
       "base/space": "enabled",
       "base/font": "enabled",
-      "base/lineheight": "enabled"
+      "base/lineheight": "enabled",
+      "base/opacity": "enabled",
+      "sema/font": "enabled",
+      "sema/lineheight/default": "enabled",
+      "sema/opacity": "enabled",
+      "sema/rounding": "enabled",
+      "sema/space": "enabled",
+      "sema/elevation": "enabled",
+      "base/color/default": "enabled",
+      "sema/color/dark/default": "enabled",
+      "base/color/hover": "enabled",
+      "base/color/pressed": "enabled",
+      "sema/color/dark/hover": "enabled",
+      "sema/color/dark/pressed": "enabled"
     },
     "group": "colors"
   }

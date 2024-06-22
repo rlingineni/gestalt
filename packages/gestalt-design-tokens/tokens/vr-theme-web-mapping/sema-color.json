@@ -90,7 +90,7 @@
           "value": "{color.background.info.weak.value}"
         },
         "strong": {
-          "value": "{color.background.info.strong.value}"
+          "value": "{color.background.info.default.value}"
         }
       },
       "error": {
@@ -133,58 +133,58 @@
       },
       "primary": {
         "base": {
-          "value": "{color.background.primary.default.value}"
+          "value": "{color.background.primary.value}"
         },
         "weak": {
-          "value": "{color.background.primary.weak.value}"
+          "value": "{color.background.primary.value}"
         },
         "strong": {
-          "value": "{color.background.primary.strong.value}"
+          "value": "{color.background.primary.value}"
         }
       },
       "secondary": {
         "base": {
-          "value": "{color.background.secondary.default.value}"
+          "value": "{color.background.secondary.value}"
         },
         "weak": {
-          "value": "{color.background.secondary.weak.value}"
+          "value": "{color.background.secondary.value}"
         },
         "strong": {
-          "value": "{color.background.secondary.strong.value}"
+          "value": "{color.background.secondary.value}"
         }
       },
       "tertiary": {
         "base": {
-          "value": "{color.background.tertiary.default.value}"
+          "value": "{color.background.tertiary.value}"
         },
         "weak": {
-          "value": "{color.background.tertiary.weak.value}"
+          "value": "{color.background.tertiary.value}"
         },
         "strong": {
-          "value": "{color.background.tertiary.strong.value}"
+          "value": "{color.background.tertiary.value}"
         }
       },
       "selected": {
         "base": {
-          "value": "{color.background.selected.default.value}"
+          "value": "{color.background.selected.value}"
         },
         "weak": {
-          "value": "{color.background.selected.weak.value}"
+          "value": "{color.background.selected.value}"
         },
         "strong": {
-          "value": "{color.background.selected.strong.value}"
+          "value": "{color.background.selected.value}"
         }
       },
       "inverse": {
         "base": {
-          "value": "{color.background.inverse.default.value}"
+          "value": "{color.background.inverse.value}"
         },
         "strong": {
-          "value": "{color.background.inverse.strong.value}"
+          "value": "{color.background.inverse.value}"
         }
       },
       "brand": {
-        "value": "{color.background.primary.default.value}"
+        "value": "{color.background.primary.value}"
       },
       "education": {
         "value": "{color.background.education.value}"
@@ -226,7 +226,7 @@
         "value": "{color.border.error.value}"
       },
       "focus": {
-        "value": "{color.border.focus.value}"
+        "value": "{color.border.focus.outer.default}"
       }
     }
   }

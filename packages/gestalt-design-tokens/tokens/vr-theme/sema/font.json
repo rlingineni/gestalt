@@ -3,80 +3,80 @@
     "weight": {
       "heading": {
         "bold": {
-          "value": "{font.weight.700}",
-          "type": "other"
+          "type": "other",
+          "value": "{font.weight.700}"
         },
         "medium": {
-          "value": "{font.weight.500}",
-          "type": "other"
+          "type": "other",
+          "value": "{font.weight.500}"
         }
       },
       "body": {
-        "value": "{font.weight.400}",
-        "type": "other"
+        "type": "other",
+        "value": "{font.weight.400}"
       },
       "UI": {
-        "value": "{font.weight.500}",
-        "type": "other"
+        "type": "other",
+        "value": "{font.weight.500}"
       }
     },
     "size": {
       "heading": {
         "XXS": {
-          "value": "{font.size.14}",
-          "type": "other"
+          "type": "other",
+          "value": "{font.size.14}"
         },
         "XS": {
-          "value": "{font.size.16}",
-          "type": "other"
+          "type": "other",
+          "value": "{font.size.16}"
         },
         "SM": {
-          "value": "{font.size.20}",
-          "type": "other"
+          "type": "other",
+          "value": "{font.size.20}"
         },
         "MD": {
-          "value": "{font.size.28}",
-          "type": "other"
+          "type": "other",
+          "value": "{font.size.28}"
         },
         "LG": {
-          "value": "{font.size.36}",
-          "type": "other"
+          "type": "other",
+          "value": "{font.size.36}"
         }
       },
       "body": {
         "XS": {
-          "value": "{font.size.12}",
-          "type": "other"
+          "type": "other",
+          "value": "{font.size.12}"
         },
         "SM": {
-          "value": "{font.size.14}",
-          "type": "other"
+          "type": "other",
+          "value": "{font.size.14}"
         },
         "MD": {
-          "value": "{font.size.16}",
-          "type": "other"
+          "type": "other",
+          "value": "{font.size.16}"
         },
         "LG": {
-          "value": "{font.size.20}",
-          "type": "other"
+          "type": "other",
+          "value": "{font.size.20}"
         }
       },
       "UI": {
         "XS": {
-          "value": "{font.size.12}",
-          "type": "other"
+          "type": "other",
+          "value": "{font.size.12}"
         },
         "SM": {
-          "value": "{font.size.14}",
-          "type": "other"
+          "type": "other",
+          "value": "{font.size.14}"
         },
         "MD": {
-          "value": "{font.size.16}",
-          "type": "other"
+          "type": "other",
+          "value": "{font.size.16}"
         },
         "LG": {
-          "value": "{font.size.20}",
-          "type": "other"
+          "type": "other",
+          "value": "{font.size.20}"
         }
       }
     }

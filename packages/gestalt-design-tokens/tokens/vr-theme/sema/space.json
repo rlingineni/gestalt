@@ -3,108 +3,108 @@
     "gap": {
       "horizontal": {
         "XS": {
-          "value": "{space.2}",
-          "type": "spacing"
+          "type": "spacing",
+          "value": "{space.2}"
         },
         "SM": {
-          "value": "{space.4}",
-          "type": "spacing"
+          "type": "spacing",
+          "value": "{space.4}"
         },
         "MD": {
-          "value": "{space.6}",
-          "type": "spacing"
+          "type": "spacing",
+          "value": "{space.6}"
         },
         "LG": {
-          "value": "{space.8}",
-          "type": "spacing"
+          "type": "spacing",
+          "value": "{space.8}"
         },
         "XL": {
-          "value": "{space.12}",
-          "type": "spacing"
+          "type": "spacing",
+          "value": "{space.12}"
         },
         "XXL": {
-          "value": "{space.16}",
-          "type": "spacing"
+          "type": "spacing",
+          "value": "{space.16}"
         }
       },
       "vertical": {
         "XS": {
-          "value": "{space.2}",
-          "type": "spacing"
+          "type": "spacing",
+          "value": "{space.2}"
         },
         "SM": {
-          "value": "{space.4}",
-          "type": "spacing"
+          "type": "spacing",
+          "value": "{space.4}"
         },
         "MD": {
-          "value": "{space.6}",
-          "type": "spacing"
+          "type": "spacing",
+          "value": "{space.6}"
         },
         "LG": {
-          "value": "{space.8}",
-          "type": "spacing"
+          "type": "spacing",
+          "value": "{space.8}"
         },
         "XL": {
-          "value": "{space.12}",
-          "type": "spacing"
+          "type": "spacing",
+          "value": "{space.12}"
         },
         "XXL": {
-          "value": "{space.16}",
-          "type": "spacing"
+          "type": "spacing",
+          "value": "{space.16}"
         }
       }
     },
     "padding": {
       "horizontal": {
         "XS": {
-          "value": "{space.2}",
-          "type": "spacing"
+          "type": "spacing",
+          "value": "{space.2}"
         },
         "SM": {
-          "value": "{space.4}",
-          "type": "spacing"
+          "type": "spacing",
+          "value": "{space.4}"
         },
         "MD": {
-          "value": "{space.6}",
-          "type": "spacing"
+          "type": "spacing",
+          "value": "{space.6}"
         },
         "LG": {
-          "value": "{space.8}",
-          "type": "spacing"
+          "type": "spacing",
+          "value": "{space.8}"
         },
         "XL": {
-          "value": "{space.12}",
-          "type": "spacing"
+          "type": "spacing",
+          "value": "{space.12}"
         },
         "XXL": {
-          "value": "{space.16}",
-          "type": "spacing"
+          "type": "spacing",
+          "value": "{space.16}"
         }
       },
       "vertical": {
         "XS": {
-          "value": "{space.2}",
-          "type": "spacing"
+          "type": "spacing",
+          "value": "{space.2}"
         },
         "SM": {
-          "value": "{space.4}",
-          "type": "spacing"
+          "type": "spacing",
+          "value": "{space.4}"
         },
         "MD": {
-          "value": "{space.6}",
-          "type": "spacing"
+          "type": "spacing",
+          "value": "{space.6}"
         },
         "LG": {
-          "value": "{space.8}",
-          "type": "spacing"
+          "type": "spacing",
+          "value": "{space.8}"
         },
         "XL": {
-          "value": "{space.12}",
-          "type": "spacing"
+          "type": "spacing",
+          "value": "{space.12}"
         },
         "XXL": {
-          "value": "{space.16}",
-          "type": "spacing"
+          "type": "spacing",
+          "value": "{space.16}"
         }
       }
     }
