@@ -1,9 +1,11 @@
-const { transforms: tokenStudioBaseTransforms } = require('@tokens-studio/sd-transforms');
-
 // eslint-disable-next-line no-unused-vars -- Importing for type definitions
 const StyleDictionary = require('style-dictionary');
 
-const transforms = ['attribute/custom-cti', 'token-studio/resolveMath', 'token-studio/size/px'];
+const transforms = [
+  'attribute/custom-cti',
+  'token-studio/resolveMath',
+  'token-studio/postMathTransform',
+];
 
 const webCssTransformGroup = [
   ...transforms,

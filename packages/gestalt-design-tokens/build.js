@@ -1,13 +1,13 @@
 const {
   registerTransforms: registerTokenStudioTransforms,
   checkAndEvaluateMath,
-  transformDimension,
 } = require('@tokens-studio/sd-transforms');
-
+const fs = require('fs');
 const StyleDictionary = require('style-dictionary');
 const tinycolor = require('tinycolor2');
 const toCamelCase = require('lodash.camelcase');
 const { registerTokenTransformGroups } = require('./transform');
+const usesReference = require('./utils/usesReference');
 
 // #region CONFIG
 
@@ -278,7 +278,11 @@ function buildShadowValue(values, platform) {
 
       // strip the px ending in the value of the object, since we re-add it below
       function cleanValue(str) {
-        return str.toString().replace('px', '');
+        try {
+          return str.toString().replace('px', '');
+        } catch (e) {
+          // do nothing
+        }
       }
 
       const base = `${cleanValue(value.x ?? value.offsetX)}px ${cleanValue(
@@ -371,7 +375,8 @@ function getSources({ theme, modeTheme, platform, language }) {
     'tokens/vr-theme/sema/opacity.json',
     'tokens/vr-theme/sema/rounding.json',
     'tokens/vr-theme/sema/space.json',
-    `tokens/vr-theme/sema/lineheight/${language}.json`,
+    `tokens/vr-theme/sema/text/language/${language}.json`,
+    'tokens/vr-theme/sema/text/font.json',
     'tokens/vr-theme/sema/motion.json',
     ...(theme === 'vr-theme-web-mapping'
       ? [
@@ -507,50 +512,45 @@ StyleDictionary.registerTransform({
   },
 });
 
+/**
+ * Used to reset the token's value to `px` units
+ */
 StyleDictionary.registerTransform({
-  name: 'token-studio/size/px',
+  name: 'token-studio/postMathTransform',
   type: 'value',
-  matcher: (token) => ['space', 'rounding'].includes(token.attributes.category),
-  transformer: (token) => {
-    console.log(token);
-    if (token.original.value.includes('*')) {
-      throw new Error('Math expressions are not allowed in token values');
-    }
-
-    return `${token.original.value}`;
-  },
+  matcher: (token) => ['space', 'rounding', 'font'].includes(token.attributes.category),
+  transformer: (token) => token.value,
 });
 
 /**
- * The transforms below are transitive transforms, because their values
- * can contain references, e.g.:
- * - rgba({color.r}, {color.g}, 0, 0)
- * - {dimension.scale} * {spacing.sm}
- * - { fontSize: "{foo}" }
- * - { width: "{bar}" }
- * - { blur: "{qux}" }
- * or because the modifications have to be done on this specific token,
- * after resolution, e.g. color modify
+ * Used to resolve math expressions. Uses a transitive transform to ensure that the original value is set to the computed value.
  */
 StyleDictionary.registerTransform({
   name: 'token-studio/resolveMath',
   type: 'value',
-  transitive: true,
-  matcher: (token) =>
-    typeof token.value === 'string' && ['space', 'rounding'].includes(token.attributes.category),
-  transformer: (token) => {
-    const value = token.value.toString().replace('px', '');
-    const computed = checkAndEvaluateMath(value);
-    const val = computed.toString(); // hasUnits ? `${computed.toString()}` : `${computed.toString()}px`;
+  matcher: (token) => ['space', 'rounding'].includes(token.attributes.category),
+  transformer: (token, another) => {
+    // get the original token value
+    const { value } = token.original;
 
-    // if the original value is a math expression, set the original value as the computed value
-    if (token.original.value.includes('*')) {
-      // eslint-disable-next-line no-param-reassign -- mutating the token inline
-      token.original.value = `${val}px`;
+    if (token.attributes.prefix === 'sema') {
+      console.log(value);
+      console.log(another);
+      if (usesReference(value)) {
+        console.log('using reference....');
+        console.log(token);
+        throw new Error('Using reference');
+      }
     }
 
-    // check if the original value has units
-    return val;
+    // if it has a math expression
+    // pull out the references (e.g space.base, space.small)
+    // look it up in the local_lookup_map
+    // replace the reference with the value
+    // evaluate the math expression
+    // return the value as the computed value
+
+    return token.value;
   },
 });
 
@@ -1230,6 +1230,8 @@ registerTokenStudioTransforms(StyleDictionary);
 
 registerTokenTransformGroups(StyleDictionary);
 
+let LOCAL_LOOKUP_MAP = {};
+
 ['classic', 'vr-theme', 'vr-theme-web-mapping'].forEach((theme) =>
   ['light', 'dark'].forEach((mode) => {
     // THIS NEEDS A CLEANUP BUT INTERIM SOLUTION 'default'MUST BE LAST
@@ -1242,12 +1244,18 @@ registerTokenTransformGroups(StyleDictionary);
         const StyleDictionaryIOS = StyleDictionary.extend(
           getIOSConfiguration({ mode, theme, language }),
         );
+
+        LOCAL_LOOKUP_MAP = StyleDictionaryIOS.exportPlatform('ios-swift');
+        // write the lookup map to a file
+        fs.writeFileSync('lookup.json', JSON.stringify(LOCAL_LOOKUP_MAP, null, 4));
+
         platformFileMap.ios.forEach((platform) => StyleDictionaryIOS.buildPlatform(platform));
 
         // // Android platform
         const StyleDictionaryAndroid = StyleDictionary.extend(
           getAndroidConfiguration({ mode, theme, language }),
         );
+
         platformFileMap.android.forEach((platform) =>
           StyleDictionaryAndroid.buildPlatform(platform),
         );

@@ -854,6 +854,20 @@ public enum GestaltTokensFontFamilyVR {
     public static let baseFamilyCode = \\"'SF Mono', 'Segoe UI Mono', 'Roboto Mono', 'Ubuntu Mono', Menlo, Consolas, Courier, monospace\\" 
     public static let baseFamilyDefaultJapanese = \\"'SF Pro JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Helvetica, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', Arial, sans-serif\\" 
     public static let baseFamilyDefaultLatin = \\"'Pin Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Helvetica, 'ヒラギノ角ゴ Pro W3', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', Arial, sans-serif\\"
+    public static let semaFamilyCompactXs = baseFamilyDefaultLatin
+    public static let semaFamilyBodyXs = baseFamilyDefaultLatin
+    public static let semaFamilyBodySm = baseFamilyDefaultLatin
+    public static let semaFamilyBodyMd = baseFamilyDefaultLatin
+    public static let semaFamilyBodyLg = baseFamilyDefaultLatin
+    public static let semaFamilyUiXs = baseFamilyDefaultLatin
+    public static let semaFamilyUiSm = baseFamilyDefaultLatin
+    public static let semaFamilyUiMd = baseFamilyDefaultLatin
+    public static let semaFamilyUiLg = baseFamilyDefaultLatin
+    public static let semaFamilyHeadingXxs = baseFamilyDefaultLatin
+    public static let semaFamilyHeadingXs = baseFamilyDefaultLatin
+    public static let semaFamilyHeadingSm = baseFamilyDefaultLatin
+    public static let semaFamilyHeadingMd = baseFamilyDefaultLatin
+    public static let semaFamilyHeadingLg = baseFamilyDefaultLatin
 }
 ",
   "dist/ios-swift/vr-theme/GestaltTokensFontLineHeightVR-CK.swift": "
@@ -871,6 +885,25 @@ public enum GestaltTokensFontLineHeightCKVR {
     public static let baseLineheight130 = \\"1.3\\"
     public static let baseLineheight120 = \\"1.2\\"
     public static let baseLineheight110 = \\"1.1\\"
+    public static let semaLineheightXs = baseLineheight120
+    public static let semaLineheightSm = baseLineheight130
+    public static let semaLineheightMd = baseLineheight150
+    public static let semaLineheightLg = baseLineheight150
+    public static let semaLineheightXl = baseLineheight150
+    public static let semaLineheightCompactXs = roundTo(semaLineheightSm * semaSizeCompactXs)
+    public static let semaLineheightBodyXs = roundTo(semaLineheightLg * semaSizeBodyXs)
+    public static let semaLineheightBodySm = roundTo(semaLineheightLg * semaSizeBodySm)
+    public static let semaLineheightBodyMd = roundTo(semaLineheightLg * semaSizeBodyMd)
+    public static let semaLineheightBodyLg = roundTo(semaLineheightLg * semaSizeBodyLg)
+    public static let semaLineheightUiXs = roundTo(semaLineheightMd * semaSizeUiXs)
+    public static let semaLineheightUiSm = roundTo(semaLineheightSm * semaSizeUiSm)
+    public static let semaLineheightUiMd = roundTo(semaLineheightSm * semaSizeUiMd)
+    public static let semaLineheightUiLg = roundTo(semaLineheightSm * semaSizeUiLg)
+    public static let semaLineheightHeadingXxs = roundTo(semaLineheightLg * semaSizeHeadingXxs)
+    public static let semaLineheightHeadingXs = roundTo(semaSizeHeadingXs * semaLineheightLg)
+    public static let semaLineheightHeadingSm = roundTo(semaSizeHeadingSm * semaLineheightSm)
+    public static let semaLineheightHeadingMd = roundTo(semaSizeHeadingMd * semaLineheightXs)
+    public static let semaLineheightHeadingLg = roundTo(semaSizeHeadingLg * semaLineheightXs)
 }
 ",
   "dist/ios-swift/vr-theme/GestaltTokensFontLineHeightVR-DEFAULT.swift": "
@@ -888,6 +921,25 @@ public enum GestaltTokensFontLineHeightDEFAULTVR {
     public static let baseLineheight130 = \\"1.3\\"
     public static let baseLineheight120 = \\"1.2\\"
     public static let baseLineheight110 = \\"1.1\\"
+    public static let semaLineheightXs = baseLineheight110
+    public static let semaLineheightSm = baseLineheight120
+    public static let semaLineheightMd = baseLineheight130
+    public static let semaLineheightLg = baseLineheight140
+    public static let semaLineheightXl = baseLineheight150
+    public static let semaLineheightCompactXs = roundTo(semaLineheightSm * semaSizeCompactXs)
+    public static let semaLineheightBodyXs = roundTo(semaLineheightLg * semaSizeBodyXs)
+    public static let semaLineheightBodySm = roundTo(semaLineheightLg * semaSizeBodySm)
+    public static let semaLineheightBodyMd = roundTo(semaLineheightLg * semaSizeBodyMd)
+    public static let semaLineheightBodyLg = roundTo(semaLineheightLg * semaSizeBodyLg)
+    public static let semaLineheightUiXs = roundTo(semaLineheightMd * semaSizeUiXs)
+    public static let semaLineheightUiSm = roundTo(semaLineheightSm * semaSizeUiSm)
+    public static let semaLineheightUiMd = roundTo(semaLineheightSm * semaSizeUiMd)
+    public static let semaLineheightUiLg = roundTo(semaLineheightSm * semaSizeUiLg)
+    public static let semaLineheightHeadingXxs = roundTo(semaLineheightLg * semaSizeHeadingXxs)
+    public static let semaLineheightHeadingXs = roundTo(semaSizeHeadingXs * semaLineheightLg)
+    public static let semaLineheightHeadingSm = roundTo(semaSizeHeadingSm * semaLineheightSm)
+    public static let semaLineheightHeadingMd = roundTo(semaSizeHeadingMd * semaLineheightXs)
+    public static let semaLineheightHeadingLg = roundTo(semaSizeHeadingLg * semaLineheightXs)
 }
 ",
   "dist/ios-swift/vr-theme/GestaltTokensFontLineHeightVR-JA.swift": "
@@ -905,6 +957,25 @@ public enum GestaltTokensFontLineHeightJAVR {
     public static let baseLineheight130 = \\"1.3\\"
     public static let baseLineheight120 = \\"1.2\\"
     public static let baseLineheight110 = \\"1.1\\"
+    public static let semaLineheightXs = baseLineheight120
+    public static let semaLineheightSm = baseLineheight130
+    public static let semaLineheightMd = baseLineheight150
+    public static let semaLineheightLg = baseLineheight160
+    public static let semaLineheightXl = baseLineheight160
+    public static let semaLineheightCompactXs = roundTo(semaLineheightSm * semaSizeCompactXs)
+    public static let semaLineheightBodyXs = roundTo(semaLineheightLg * semaSizeBodyXs)
+    public static let semaLineheightBodySm = roundTo(semaLineheightLg * semaSizeBodySm)
+    public static let semaLineheightBodyMd = roundTo(semaLineheightLg * semaSizeBodyMd)
+    public static let semaLineheightBodyLg = roundTo(semaLineheightLg * semaSizeBodyLg)
+    public static let semaLineheightUiXs = roundTo(semaLineheightMd * semaSizeUiXs)
+    public static let semaLineheightUiSm = roundTo(semaLineheightSm * semaSizeUiSm)
+    public static let semaLineheightUiMd = roundTo(semaLineheightSm * semaSizeUiMd)
+    public static let semaLineheightUiLg = roundTo(semaLineheightSm * semaSizeUiLg)
+    public static let semaLineheightHeadingXxs = roundTo(semaLineheightLg * semaSizeHeadingXxs)
+    public static let semaLineheightHeadingXs = roundTo(semaSizeHeadingXs * semaLineheightLg)
+    public static let semaLineheightHeadingSm = roundTo(semaSizeHeadingSm * semaLineheightSm)
+    public static let semaLineheightHeadingMd = roundTo(semaSizeHeadingMd * semaLineheightXs)
+    public static let semaLineheightHeadingLg = roundTo(semaSizeHeadingLg * semaLineheightXs)
 }
 ",
   "dist/ios-swift/vr-theme/GestaltTokensFontLineHeightVR-TALL.swift": "
@@ -922,6 +993,25 @@ public enum GestaltTokensFontLineHeightTALLVR {
     public static let baseLineheight130 = \\"1.3\\"
     public static let baseLineheight120 = \\"1.2\\"
     public static let baseLineheight110 = \\"1.1\\"
+    public static let semaLineheightXl = baseLineheight170
+    public static let semaLineheightLg = baseLineheight170
+    public static let semaLineheightMd = baseLineheight160
+    public static let semaLineheightSm = baseLineheight140
+    public static let semaLineheightXs = baseLineheight130
+    public static let semaLineheightCompactXs = roundTo(semaLineheightSm * semaSizeCompactXs)
+    public static let semaLineheightBodyXs = roundTo(semaLineheightLg * semaSizeBodyXs)
+    public static let semaLineheightBodySm = roundTo(semaLineheightLg * semaSizeBodySm)
+    public static let semaLineheightBodyMd = roundTo(semaLineheightLg * semaSizeBodyMd)
+    public static let semaLineheightBodyLg = roundTo(semaLineheightLg * semaSizeBodyLg)
+    public static let semaLineheightUiXs = roundTo(semaLineheightMd * semaSizeUiXs)
+    public static let semaLineheightUiSm = roundTo(semaLineheightSm * semaSizeUiSm)
+    public static let semaLineheightUiMd = roundTo(semaLineheightSm * semaSizeUiMd)
+    public static let semaLineheightUiLg = roundTo(semaLineheightSm * semaSizeUiLg)
+    public static let semaLineheightHeadingXxs = roundTo(semaLineheightLg * semaSizeHeadingXxs)
+    public static let semaLineheightHeadingXs = roundTo(semaSizeHeadingXs * semaLineheightLg)
+    public static let semaLineheightHeadingSm = roundTo(semaSizeHeadingSm * semaLineheightSm)
+    public static let semaLineheightHeadingMd = roundTo(semaSizeHeadingMd * semaLineheightXs)
+    public static let semaLineheightHeadingLg = roundTo(semaSizeHeadingLg * semaLineheightXs)
 }
 ",
   "dist/ios-swift/vr-theme/GestaltTokensFontLineHeightVR-TH.swift": "
@@ -939,6 +1029,25 @@ public enum GestaltTokensFontLineHeightTHVR {
     public static let baseLineheight130 = \\"1.3\\"
     public static let baseLineheight120 = \\"1.2\\"
     public static let baseLineheight110 = \\"1.1\\"
+    public static let semaLineheightXs = baseLineheight130
+    public static let semaLineheightSm = baseLineheight150
+    public static let semaLineheightMd = baseLineheight170
+    public static let semaLineheightLg = baseLineheight180
+    public static let semaLineheightXl = baseLineheight180
+    public static let semaLineheightCompactXs = roundTo(semaLineheightSm * semaSizeCompactXs)
+    public static let semaLineheightBodyXs = roundTo(semaLineheightLg * semaSizeBodyXs)
+    public static let semaLineheightBodySm = roundTo(semaLineheightLg * semaSizeBodySm)
+    public static let semaLineheightBodyMd = roundTo(semaLineheightLg * semaSizeBodyMd)
+    public static let semaLineheightBodyLg = roundTo(semaLineheightLg * semaSizeBodyLg)
+    public static let semaLineheightUiXs = roundTo(semaLineheightMd * semaSizeUiXs)
+    public static let semaLineheightUiSm = roundTo(semaLineheightSm * semaSizeUiSm)
+    public static let semaLineheightUiMd = roundTo(semaLineheightSm * semaSizeUiMd)
+    public static let semaLineheightUiLg = roundTo(semaLineheightSm * semaSizeUiLg)
+    public static let semaLineheightHeadingXxs = roundTo(semaLineheightLg * semaSizeHeadingXxs)
+    public static let semaLineheightHeadingXs = roundTo(semaSizeHeadingXs * semaLineheightLg)
+    public static let semaLineheightHeadingSm = roundTo(semaSizeHeadingSm * semaLineheightSm)
+    public static let semaLineheightHeadingMd = roundTo(semaSizeHeadingMd * semaLineheightXs)
+    public static let semaLineheightHeadingLg = roundTo(semaSizeHeadingLg * semaLineheightXs)
 }
 ",
   "dist/ios-swift/vr-theme/GestaltTokensFontLineHeightVR-VI.swift": "
@@ -956,6 +1065,25 @@ public enum GestaltTokensFontLineHeightVIVR {
     public static let baseLineheight130 = \\"1.3\\"
     public static let baseLineheight120 = \\"1.2\\"
     public static let baseLineheight110 = \\"1.1\\"
+    public static let semaLineheightXs = baseLineheight120
+    public static let semaLineheightSm = baseLineheight120
+    public static let semaLineheightMd = baseLineheight120
+    public static let semaLineheightLg = baseLineheight130
+    public static let semaLineheightXl = baseLineheight140
+    public static let semaLineheightCompactXs = roundTo(semaLineheightSm * semaSizeCompactXs)
+    public static let semaLineheightBodyXs = roundTo(semaLineheightLg * semaSizeBodyXs)
+    public static let semaLineheightBodySm = roundTo(semaLineheightLg * semaSizeBodySm)
+    public static let semaLineheightBodyMd = roundTo(semaLineheightLg * semaSizeBodyMd)
+    public static let semaLineheightBodyLg = roundTo(semaLineheightLg * semaSizeBodyLg)
+    public static let semaLineheightUiXs = roundTo(semaLineheightMd * semaSizeUiXs)
+    public static let semaLineheightUiSm = roundTo(semaLineheightSm * semaSizeUiSm)
+    public static let semaLineheightUiMd = roundTo(semaLineheightSm * semaSizeUiMd)
+    public static let semaLineheightUiLg = roundTo(semaLineheightSm * semaSizeUiLg)
+    public static let semaLineheightHeadingXxs = roundTo(semaLineheightLg * semaSizeHeadingXxs)
+    public static let semaLineheightHeadingXs = roundTo(semaSizeHeadingXs * semaLineheightLg)
+    public static let semaLineheightHeadingSm = roundTo(semaSizeHeadingSm * semaLineheightSm)
+    public static let semaLineheightHeadingMd = roundTo(semaSizeHeadingMd * semaLineheightXs)
+    public static let semaLineheightHeadingLg = roundTo(semaSizeHeadingLg * semaLineheightXs)
 }
 ",
   "dist/ios-swift/vr-theme/GestaltTokensFontSizeVR.swift": "
@@ -971,6 +1099,20 @@ public enum GestaltTokensFontSizeVR {
     public static let baseSize16 = \\"16px\\"
     public static let baseSize14 = \\"14px\\"
     public static let baseSize12 = \\"12px\\"
+    public static let semaSizeCompactXs = baseSize12
+    public static let semaSizeBodyLg = baseSize20
+    public static let semaSizeBodyMd = baseSize16
+    public static let semaSizeBodySm = baseSize14
+    public static let semaSizeBodyXs = baseSize12
+    public static let semaSizeUiLg = baseSize20
+    public static let semaSizeUiMd = baseSize16
+    public static let semaSizeUiSm = baseSize14
+    public static let semaSizeUiXs = baseSize12
+    public static let semaSizeHeadingLg = baseSize36
+    public static let semaSizeHeadingMd = baseSize28
+    public static let semaSizeHeadingSm = baseSize20
+    public static let semaSizeHeadingXs = baseSize16
+    public static let semaSizeHeadingXxs = baseSize14
 }
 ",
   "dist/ios-swift/vr-theme/GestaltTokensFontWeightVR.swift": "
@@ -983,6 +1125,26 @@ public enum GestaltTokensFontWeightVR {
     public static let baseWeight700 = \\"700\\"
     public static let baseWeight500 = \\"500\\"
     public static let baseWeight400 = \\"400\\"
+    public static let semaWeightCompactXsEmphasis = baseWeight700
+    public static let semaWeightCompactXsDefault = baseWeight400
+    public static let semaWeightBodyXsEmphasis = baseWeight700
+    public static let semaWeightBodyXsDefault = baseWeight400
+    public static let semaWeightBodySmEmphasis = baseWeight700
+    public static let semaWeightBodySmDefault = baseWeight400
+    public static let semaWeightBodyMdEmphasis = baseWeight700
+    public static let semaWeightBodyMdDefault = baseWeight400
+    public static let semaWeightBodyLgEmphasis = baseWeight700
+    public static let semaWeightBodyLgDefault = baseWeight400
+    public static let semaWeightUiXxs = baseWeight500
+    public static let semaWeightUiXs = baseWeight500
+    public static let semaWeightUiSm = baseWeight500
+    public static let semaWeightUiMd = baseWeight500
+    public static let semaWeightUiLg = baseWeight500
+    public static let semaWeightHeadingXxs = baseWeight500
+    public static let semaWeightHeadingXs = baseWeight500
+    public static let semaWeightHeadingSm = baseWeight500
+    public static let semaWeightHeadingMd = baseWeight700
+    public static let semaWeightHeadingLg = baseWeight700
 }
 ",
   "dist/ios-swift/vr-theme/GestaltTokensMotionDurationVR.swift": "
@@ -1070,16 +1232,16 @@ import SwiftUI
 public enum GestaltTokensRoundingVR {
     public static let semaCircle = 50%
     public static let semaPill = 999
-    public static let sema800 = 32px
-    public static let sema700 = 28px
-    public static let sema600 = 24px
-    public static let sema500 = 20px
-    public static let sema400 = 16px
-    public static let sema300 = 12px
-    public static let sema200 = 8px
-    public static let sema100 = 4px
     public static let sema0 = 0
     public static let baseUnit = 4
+    public static let sema800 = baseUnit * 8
+    public static let sema700 = baseUnit * 7
+    public static let sema600 = baseUnit * 6
+    public static let sema500 = baseUnit * 5
+    public static let sema400 = baseUnit * 4
+    public static let sema300 = baseUnit * 3
+    public static let sema200 = baseUnit * 2
+    public static let sema100 = baseUnit * 1
 }
 ",
   "dist/ios-swift/vr-theme/GestaltTokensSpaceVR.swift": "
@@ -1089,46 +1251,46 @@ public enum GestaltTokensRoundingVR {
 import SwiftUI
 
 public enum GestaltTokensSpaceVR {
-    public static let semaNegative1600 = -64px
-    public static let semaNegative1500 = -60px
-    public static let semaNegative1400 = -56px
-    public static let semaNegative1300 = -52px
-    public static let semaNegative1200 = -48px
-    public static let semaNegative1100 = -44px
-    public static let semaNegative1000 = -40px
-    public static let semaNegative900 = -36px
-    public static let semaNegative800 = -32px
-    public static let semaNegative700 = -28px
-    public static let semaNegative600 = -24px
-    public static let semaNegative500 = -20px
-    public static let semaNegative400 = -16px
-    public static let semaNegative300 = -12px
-    public static let semaNegative200 = -8px
-    public static let semaNegative150 = -6px
-    public static let semaNegative100 = -4px
-    public static let semaNegative50 = -2px
-    public static let semaNegative25 = -1px
-    public static let sema1600 = 64px
-    public static let sema1500 = 60px
-    public static let sema1400 = 56px
-    public static let sema1300 = 52px
-    public static let sema1200 = 48px
-    public static let sema1100 = 44px
-    public static let sema1000 = 40px
-    public static let sema900 = 36px
-    public static let sema800 = 32px
-    public static let sema700 = 28px
-    public static let sema600 = 24px
-    public static let sema500 = 20px
-    public static let sema400 = 16px
-    public static let sema300 = 12px
-    public static let sema200 = 8px
-    public static let sema150 = 6px
-    public static let sema100 = 4px
-    public static let sema50 = 2px
-    public static let sema25 = 1px
     public static let sema0 = 0
     public static let baseUnit = 4
+    public static let semaNegative1600 = baseUnit * -16
+    public static let semaNegative1500 = baseUnit * -15
+    public static let semaNegative1400 = baseUnit * -14
+    public static let semaNegative1300 = baseUnit * -13
+    public static let semaNegative1200 = baseUnit * -12
+    public static let semaNegative1100 = baseUnit * -11
+    public static let semaNegative1000 = baseUnit * -10
+    public static let semaNegative900 = baseUnit * -9
+    public static let semaNegative800 = baseUnit * -8
+    public static let semaNegative700 = baseUnit * -7
+    public static let semaNegative600 = baseUnit * -6
+    public static let semaNegative500 = baseUnit * -5
+    public static let semaNegative400 = baseUnit * -4
+    public static let semaNegative300 = baseUnit * -3
+    public static let semaNegative200 = baseUnit * -2
+    public static let semaNegative150 = baseUnit * -1.5
+    public static let semaNegative100 = baseUnit * -1
+    public static let semaNegative50 = baseUnit * -0.5
+    public static let semaNegative25 = baseUnit * -0.25
+    public static let sema1600 = baseUnit * 16
+    public static let sema1500 = baseUnit * 15
+    public static let sema1400 = baseUnit * 14
+    public static let sema1300 = baseUnit * 13
+    public static let sema1200 = baseUnit * 12
+    public static let sema1100 = baseUnit * 11
+    public static let sema1000 = baseUnit * 10
+    public static let sema900 = baseUnit * 9
+    public static let sema800 = baseUnit * 8
+    public static let sema700 = baseUnit * 7
+    public static let sema600 = baseUnit * 6
+    public static let sema500 = baseUnit * 5
+    public static let sema400 = baseUnit * 4
+    public static let sema300 = baseUnit * 3
+    public static let sema200 = baseUnit * 2
+    public static let sema150 = baseUnit * 1.5
+    public static let sema100 = baseUnit * 1
+    public static let sema50 = baseUnit * 0.5
+    public static let sema25 = baseUnit * 0.25
 }
 ",
 }
