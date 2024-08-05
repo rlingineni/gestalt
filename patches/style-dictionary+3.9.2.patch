@@ -1,0 +1,66 @@
+diff --git a/node_modules/style-dictionary/lib/register/transform.js b/node_modules/style-dictionary/lib/register/transform.js
+index 5ca10d4..8d5c143 100644
+--- a/node_modules/style-dictionary/lib/register/transform.js
++++ b/node_modules/style-dictionary/lib/register/transform.js
+@@ -27,7 +27,7 @@ var transformTypes = ['name', 'value', 'attribute'];
+  * @param {Boolean} transform.transitive - If the value transform should be applied transitively, i.e. should be applied to referenced values as well as absolute values.
+  * @param {Function} [transform.matcher] - Matcher function, return boolean if transform should be applied. If you omit the matcher function, it will match all tokens.
+  * @param {Function} transform.transformer Modifies a design token object. The transformer function will receive the token and the platform configuration as its arguments. The transformer function should return a string for name transforms, an object for attribute transforms, and same type of value for a value transform.
+- * @returns {module:style-dictionary}
++ * @param {Function} transform.resolver You can pass in a resolver function to resolve any references before a transform is applied. This is useful for resolving references to other tokens before applying a transform.
+  * @example
+  * ```js
+  * StyleDictionary.registerTransform({
+@@ -61,7 +61,8 @@ function registerTransform(options) {
+     type: options.type,
+     matcher: options.matcher,
+     transitive: !!options.transitive,
+-    transformer: options.transformer
++    transformer: options.transformer,
++    keepOriginal: !!options.keepOriginal
+   };
+ 
+   return this;
+diff --git a/node_modules/style-dictionary/lib/transform/property.js b/node_modules/style-dictionary/lib/transform/property.js
+index 8f2dcb5..42f4c72 100644
+--- a/node_modules/style-dictionary/lib/transform/property.js
++++ b/node_modules/style-dictionary/lib/transform/property.js
+@@ -29,12 +29,26 @@ function transformProperty(property, options) {
+   for (let i = 0; i < transforms.length; i++ ) {
+     const transform = transforms[i];
+ 
++  
++
+     if (!transform.matcher || transform.matcher(to_ret)) {
+       if (transform.type === 'name')
+         to_ret.name = transform.transformer(to_ret, options);
++
++
+       // Don't try to transform the value if it is referencing another value
+       // Only try to transform if the value is not a string or if it has '{}'
+       if (transform.type === 'value' && !usesReference(property.value, options)) {
++
++        /**
++         * a keep original value is a special case where we force run the transformer on the value
++         */
++        if(transform.keepOriginal) {
++          const value = transform.transformer(to_ret, options);
++          to_ret.value = value;
++          to_ret.original.value = value;
++        }
++
+         // Only transform non-referenced values (from original)
+         // and transitive transforms if the value has been resolved
+         if (!usesReference(property.original.value, options) || transform.transitive) {
+diff --git a/node_modules/style-dictionary/lib/utils/references/usesReference.js b/node_modules/style-dictionary/lib/utils/references/usesReference.js
+index 6d970ef..ce19b16 100644
+--- a/node_modules/style-dictionary/lib/utils/references/usesReference.js
++++ b/node_modules/style-dictionary/lib/utils/references/usesReference.js
+@@ -29,6 +29,7 @@ function usesReference(value, regexOrOptions = {}) {
+ 
+   if (typeof value === 'object') {
+     let hasReference = false;
++    
+     // iterate over each property in the object,
+     // if any element passes the regex test,
+     // the whole thing should be true

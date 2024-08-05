@@ -1,13 +1,9 @@
-const {
-  registerTransforms: registerTokenStudioTransforms,
-  checkAndEvaluateMath,
-} = require('@tokens-studio/sd-transforms');
 const fs = require('fs');
 const StyleDictionary = require('style-dictionary');
 const tinycolor = require('tinycolor2');
 const toCamelCase = require('lodash.camelcase');
 const { registerTokenTransformGroups } = require('./transform');
-const usesReference = require('./utils/usesReference');
+const usesReference = require('style-dictionary/lib/utils/references/usesReference');
 
 // #region CONFIG
 
@@ -278,11 +274,7 @@ function buildShadowValue(values, platform) {
 
       // strip the px ending in the value of the object, since we re-add it below
       function cleanValue(str) {
-        try {
-          return str.toString().replace('px', '');
-        } catch (e) {
-          // do nothing
-        }
+        return str.toString().replace('px', '');
       }
 
       const base = `${cleanValue(value.x ?? value.offsetX)}px ${cleanValue(
@@ -518,8 +510,15 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: 'token-studio/postMathTransform',
   type: 'value',
-  matcher: (token) => ['space', 'rounding', 'font'].includes(token.attributes.category),
-  transformer: (token) => token.value,
+  matcher: (token) => ['font'].includes(token.attributes.category),
+  transformer: (token) => {
+    if (token.attributes.prefix === 'sema') {
+      console.log(token);
+      console.log(' ');
+    }
+
+    return token.value;
+  },
 });
 
 /**
@@ -528,18 +527,16 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: 'token-studio/resolveMath',
   type: 'value',
-  matcher: (token) => ['space', 'rounding'].includes(token.attributes.category),
-  transformer: (token, another) => {
+  keepOriginal: true,
+  matcher: (token) => ['font'].includes(token.attributes.category),
+  transformer: (token) => {
     // get the original token value
     const { value } = token.original;
 
     if (token.attributes.prefix === 'sema') {
-      console.log(value);
-      console.log(another);
       if (usesReference(value)) {
         console.log('using reference....');
-        console.log(token);
-        throw new Error('Using reference');
+        return '123';
       }
     }
 
@@ -1224,9 +1221,6 @@ const platformFileMap = {
   android: ['android'],
   ios: ['ios', 'ios-swift'],
 };
-
-// Token Studio related transforms
-registerTokenStudioTransforms(StyleDictionary);
 
 registerTokenTransformGroups(StyleDictionary);
 
