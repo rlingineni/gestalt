@@ -3,6 +3,8 @@ import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemaTypes'
 
+import {CustomMarkdownInput} from './components/markdownEditor'
+
 import {markdownSchema} from 'sanity-plugin-markdown'
 
 export default defineConfig({
@@ -12,7 +14,7 @@ export default defineConfig({
   projectId: 'k05lbr97',
   dataset: 'docs',
 
-  plugins: [structureTool(), visionTool(), markdownSchema()],
+  plugins: [structureTool(), visionTool(), markdownSchema({input: CustomMarkdownInput})],
 
   auth: {
     mode: 'append',

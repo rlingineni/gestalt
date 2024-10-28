@@ -49,6 +49,12 @@ export default defineType({
       title: 'Body',
       type: 'blockContent',
     }),
+    {
+      title: 'Block Text',
+      name: 'blockText',
+      type: 'array',
+      of: [{type: 'block'}],
+    },
   ],
 
   preview: {
