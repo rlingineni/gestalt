@@ -1,3 +1,5 @@
+'use client';
+
 /* As we further embrace React contexts over alternatives like Redux or props drilling, the "hydra" pattern becomes more useful.
 Since all of our hydras tend to follow the same boilerplate setup, createHydra abstracts the setup.
 

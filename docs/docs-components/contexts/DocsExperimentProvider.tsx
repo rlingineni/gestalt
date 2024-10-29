@@ -1,3 +1,5 @@
+'use client';
+
 import { ReactNode } from 'react';
 import { ExperimentProvider } from 'gestalt';
 import { useAppContext } from '../appContext';
