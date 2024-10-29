@@ -5,7 +5,7 @@ export default defineCliConfig({
     projectId: 'k05lbr97',
     dataset: 'docs',
   },
-  studioHost: 'gestalt-test.sanity.studio',
+  studioHost: 'gestalt-test',
   /**
    * Enable auto-updates for studios.
    * Learn more at https://www.sanity.io/docs/cli#auto-updates
