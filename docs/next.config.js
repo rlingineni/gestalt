@@ -13,6 +13,7 @@ module.exports = {
       'github.com',
       'pinterest-assets.com',
       'www.pinterest-assets.com',
+      'cdn.sanity.io',
     ],
   },
   reactStrictMode: true,

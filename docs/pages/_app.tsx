@@ -36,13 +36,21 @@ function GestaltApp(
 ) {
   const router = useRouter();
 
-  // Hide navigation / sidebar for visual tests
+  // Hide navigation / sidebar for visual tests and sanity studio
   if (router.pathname.startsWith('/visual-test/')) {
     return (
       <Providers isMobile={isMobile}>
         <Box data-test-id="visual-test" display="inlineBlock">
           <Component {...pageProps} />
         </Box>
+      </Providers>
+    );
+  }
+
+  if (router.pathname.startsWith('/studio/')) {
+    return (
+      <Providers isMobile={false}>
+        <Component {...pageProps} />
       </Providers>
     );
   }
