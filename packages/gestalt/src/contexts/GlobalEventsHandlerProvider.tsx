@@ -1,3 +1,5 @@
+'use client';
+
 import React, { Context, createContext, ReactNode, useContext } from 'react';
 
 export type NoopType = () => void;
