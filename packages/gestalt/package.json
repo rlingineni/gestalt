@@ -15,7 +15,7 @@
   ],
   "dependencies": {
     "@floating-ui/react": "^0.25.4",
-    "classnames": "^2.2.6",
+    "classnames": "^2.5.1",
     "gestalt-design-tokens": ">0.0.0"
   },
   "peerDependencies": {
